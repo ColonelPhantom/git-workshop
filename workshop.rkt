@@ -187,6 +187,7 @@
 (slide #:title "Let's create a file"
     (termpict
         "echo 'Hello world' > hello.txt"
+        "cat hello.txt"
         "git status"))
 
 (slide #:title "Add the file to the index"
@@ -226,6 +227,7 @@
     (termpict
         "echo 'Imperative Programming' >> courses.txt"
         "echo 'Object Oriented Programming' >> courses.txt"
+        "cat courses.txt"
         "git add courses.txt"
         "git commit -m 'Add courses.txt'"))
 
@@ -237,6 +239,7 @@
         "git switch -c used-langs"
         "echo 'Imperative Programming - C++' > courses.txt"
         "echo 'Object Oriented Programming - Java' >> courses.txt"
+        "cat courses.txt"
         "git add courses.txt"
         "git commit -m 'Add used languages to courses.txt'"))
 

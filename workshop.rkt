@@ -251,10 +251,15 @@
 (system "git switch used-langs")
 
 (slide #:title "Merging back"
-    (termpict
-        "git switch main"
-        "git merge used-langs"
-        "git status"))
+    (para
+        "Merging is also often done via PRs/MRs on GitHub/GitLab/Gitea."
+        "Here it's done manually to show the process.")
+    (scale
+        (termpict
+            "git switch main"
+            "git merge used-langs"
+            "git status")
+        0.8))
 
 (slide #:title "Merge conflicts"
     (para "Merging failed because of a conflict:")
@@ -373,5 +378,20 @@
     (subitem "Usually the first few paragraphs give a good overview")
     (subitem "You can type '/EXAMPLES' <Enter> for more practical information")
     (item "The repository containing these slides also contains some links to useful resources.")
-    (subitem "https://github.com/ColonelPhantom/git-workshop")
+    (subitem (hyperlinkize (t "https://github.com/ColonelPhantom/git-workshop")))
     (subitem "For example an interactive tutorial for git branching or some cheat sheets"))
+
+(slide #:title "Some practice"
+    (item #:width 1152 "Clone the workshop repository (found at" (hyperlinkize (t "github.com/ColonelPhantom/git-workshop")) ")")
+    (subitem #:width 1152 "It's best to use SSH: run" (tt "ssh-keygen") "and add the public key to your GitHub account")
+    (subitem #:width 1152 "(We can help with this if necessary)")
+    (item #:width 1152 "Create a new branch called" (tt "add-<your-name>"))
+    (item #:width 1152 "Add your name and anything else you want")
+    (item #:width 1152 "Commit and push the changes")
+    (item #:width 1152 "Create a pull request on GitHub")
+    (subitem #:width 1152 "The website will tell you how to do this, but again we are available to help")
+    (para #:width 1152 "The website" (hyperlinkize (t "learngitbranching.js.org")) "is highly recommended if you have a bit more time!"))
+
+(slide #:title "Questions"
+    (item "Any questions?")
+    (item "Any feedback?"))

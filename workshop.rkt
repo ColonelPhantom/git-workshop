@@ -364,8 +364,8 @@
     (item (tt "git diff") "can show what changed between two points in time")
     (item (tt "git bisect") "can help you find the commit that introduced a bug")
     (item (tt "git tag") "can be used to mark a commit with a name, e.g. a version number")
-    (item (tt "git rebase -i" "can be used to edit the history of a branch")
-        (subitem "For example, squashing commits, rewording commit messages, reordering commits, removing commits")))
+    (item (tt "git rebase -i") "can be used to edit the history of a branch")
+    (subitem "For example, squashing commits, rewording commit messages, reordering commits, removing commits"))
 
 (slide #:title "Useful resources"
     (item "Git has manpages for all of its commands:" (tt "man git-<command>"))

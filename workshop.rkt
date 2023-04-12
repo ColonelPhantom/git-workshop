@@ -360,12 +360,15 @@
     (item (tt "git stash") "and" (tt "git stash pop") "are useful for temporarily saving changes")
     (item (tt "git diff") "can show what changed between two points in time")
     (item (tt "git bisect") "can help you find the commit that introduced a bug")
-    (item (tt "git tag") "can be used to mark a commit with a name, e.g. a version number"))
+    (item (tt "git tag") "can be used to mark a commit with a name, e.g. a version number")
+    (item (tt "git rebase -i" "can be used to edit the history of a branch")
+        (subitem "For example, squashing commits, rewording commit messages, reordering commits, removing commits")))
 
-(slide #:Title "Useful resources"
+(slide #:title "Useful resources"
     (item "Git has manpages for all of its commands:" (tt "man git-<command>"))
     (subitem "Can be very technical")
     (subitem "Usually the first few paragraphs give a good overview")
     (subitem "You can type '/EXAMPLES' <Enter> for more practical information")
     (item "The repository containing these slides also contains some links to useful resources.")
-    (subitem "https://github.com/ColonelPhantom/git-workshop"))
+    (subitem "https://github.com/ColonelPhantom/git-workshop")
+    (subitem "For example an interactive tutorial for git branching or some cheat sheets"))

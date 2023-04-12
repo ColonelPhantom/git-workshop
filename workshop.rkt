@@ -73,6 +73,9 @@
 ; Make git not use a pager so it doesn't hang
 (putenv "GIT_PAGER" "")
 
+(system "gh repo delete ColonelPhantom/workshop-demo --yes")
+(system "gh repo create --private ColonelPhantom/workshop-demo")
+
 ;; Slideshow starts here
 
 ;; Introduction
@@ -96,7 +99,9 @@
         (subitem (tt "git diff") ":"
             "view what changed between two points in time")
         (subitem (tt "git bisect") ":"
-            "find last working version")))
+            "find last working version")
+        (subitem (tt "git blame") ": find commit that introduced a change")
+        (subitem (tt "git revert") ": undo a change")))
 
 (slide #:title "Fundamentals of Git"
     (para
@@ -188,8 +193,9 @@
     (para 
         (item "The index is a list of files that will be committed")
         (item "You can add files to the index with" (tt "git add"))
-        (subitem "To only add some changes to a file, use" (tt "git add -p")))
-    (scale (termpict "git add hello.txt" "git status") 0.8))
+        (subitem "To only add some changes to a file, use" (tt "git add -p"))
+        (item "If a file should never be added, you can add it to the" (tt ".gitignore") "file"))
+    (scale (termpict "git add hello.txt" "git status") 0.75))
     
 (slide #:title "Commit the file"
     (termpict
@@ -286,8 +292,8 @@
     (para
         "Git says we need to specify where to push to. Luckily it tells us how!"
         "(Instead of" (tt "--set-upstream") ", we can use" (tt "-u") "for short.)"
-        "Also note that here we use --force but you should avoid it in most cases.")
-    (scale (termpict "git push -u origin main --force") 0.8))
+        "If it fails, you can use --force but use it only if you're sure!")
+    (scale (termpict "git push -u origin main ") 0.8))
 
 (current-directory "/tmp")
 (slide #:title "Cloning"
@@ -349,3 +355,17 @@
             "git rebase main"
             "git log --graph --oneline --all")
         0.8))
+
+(slide #:title "Other useful commands"
+    (item (tt "git stash") "and" (tt "git stash pop") "are useful for temporarily saving changes")
+    (item (tt "git diff") "can show what changed between two points in time")
+    (item (tt "git bisect") "can help you find the commit that introduced a bug")
+    (item (tt "git tag") "can be used to mark a commit with a name, e.g. a version number"))
+
+(slide #:Title "Useful resources"
+    (item "Git has manpages for all of its commands:" (tt "man git-<command>"))
+    (subitem "Can be very technical")
+    (subitem "Usually the first few paragraphs give a good overview")
+    (subitem "You can type '/EXAMPLES' <Enter> for more practical information")
+    (item "The repository containing these slides also contains some links to useful resources.")
+    (subitem "https://github.com/ColonelPhantom/git-workshop"))
